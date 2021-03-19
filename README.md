@@ -4,10 +4,6 @@ Discord bot built from scratch using discord.js and the official [tutorial](http
 
 # Features
 
-- Radio playing streams on [listen.moe](https://listen.moe/), both korean and japanese
-- Basic polling functionality, creating + stopping polls
-- Runescape GE item price search
-- Runescape player hiscore search
 
 # Requirements
 
@@ -27,7 +23,4 @@ Discord bot built from scratch using discord.js and the official [tutorial](http
 
 Thank you to the open-source repos and APIs that have helped me work on this project:
 
-- [Discord.js](https://discord.js.org/) Node.js module that helped with interacting with the Discord API
-- [osrsbox](https://www.osrsbox.com/) JSON API for OSRS items
-- [Redditor](https://www.reddit.com/r/2007scape/comments/3g06rq/guide_using_the_old_school_ge_page_api/) Useful guide on using the osrs GE api
-- [Jagex](https://oldschool.runescape.com/) Developed the OSRS game and GE api
+
