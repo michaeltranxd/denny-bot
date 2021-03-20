@@ -20,7 +20,7 @@ module.exports = {
     const channelName = message.channel.name;
 
     let replyMessageContent = `Help is on the way. Please wait.`;
-    let leaderMessageContent = `They input \`${args}\` and post can be found [here](${discordMessageLink} 'redirect to post')`;
+    let leaderMessageContent = `They input \`${args.join(' ')}\` and post can be found [here](${discordMessageLink} 'redirect to post')`;
 
     if (leaderMessageContent.length > 1024) {
       leaderMessageContent = `They input a long message so please look at the post [here](${discordMessageLink} 'redirect to post')`;
