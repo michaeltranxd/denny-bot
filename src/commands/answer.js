@@ -1,7 +1,7 @@
 const { channelid } = require("../config.json");
 
 module.exports = {
-  name: "answer",
+  name: "answer2",
   description: "simple helper :)",
   args: true, // Include if command requires args
   usage: "talk to tr. denny if you want to know how to use", // Include if args is true
