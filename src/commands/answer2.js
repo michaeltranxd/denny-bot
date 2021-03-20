@@ -19,17 +19,15 @@ module.exports = {
 
     const channelName = message.channel.name;
 
-    let replyMessageContent = `Help is on the way. Please wait.`;
-    let leaderMessageContent = `Their answer: \`${args.join(
-      " "
-    )}\` | post can be found [here](${discordMessageLink} 'redirect to post')`;
+    let replyMessageContent = `Answer \`${args.join(" ")}\` submitted.`;
+    let leaderMessageContent = `Their answer: \`${args.join(" ")}\` `;
 
     if (leaderMessageContent.length > 1024) {
       leaderMessageContent = `They input a long message so please look at the post [here](${discordMessageLink} 'redirect to post')`;
     }
 
     let leaderEmbedMessage = new MessageEmbed().setColor("#0099ff").addFields({
-      name: `Team channel \`${channelName}\` are submitting answer \`${textChannelId}\``,
+      name: `Team channel \`${channelName}\` are submitting answer`,
       value: leaderMessageContent,
     });
 
