@@ -12,7 +12,7 @@ module.exports = {
     let channel = message.guild.channels.cache.get(channelid);
 
     if (!channel) {
-      console.log("Issue with getting channel");
+      return console.log("Issue with getting channel");
     }
 
     channel.send(message);

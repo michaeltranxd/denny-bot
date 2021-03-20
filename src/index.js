@@ -1,6 +1,7 @@
 const fs = require("fs");
 const Discord = require("discord.js");
 const { prefix, token } = require("./config.json");
+const permissions = require("./util/permissions");
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -34,6 +35,16 @@ client.on("message", (message) => {
 
   // command is not valid (we dont recognize this command)
   if (!command) {
+    const helpCommand = client.commands.get("help");
+    return message.reply(
+      `I don't recognize that command, look at my available commands:\nrun \`${prefix}${helpCommand.name}\` to examine commands`
+    );
+  }
+
+  // Check for permissions
+  let isAdmin = permissions.isAdmin(message);
+  if (!isAdmin && command.admin_permissions) {
+    // Don't have admin permissions and command requires it
     const helpCommand = client.commands.get("help");
     return message.reply(
       `I don't recognize that command, look at my available commands:\nrun \`${prefix}${helpCommand.name}\` to examine commands`
@@ -91,8 +102,13 @@ client.on("message", (message) => {
   try {
     command.execute(message, args);
   } catch (error) {
-    console.error(error);
-    message.reply("there was an error trying to execute that command!");
+    if (error && error.type == `CommandException`) {
+      console.error(message, error.name, error.errorLog);
+      message.reply(error.replyContent);
+    } else {
+      console.error(error);
+      message.reply("there was an error trying to execute that command!");
+    }
   }
 });
 

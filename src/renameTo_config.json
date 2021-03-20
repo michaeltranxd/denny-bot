@@ -1,0 +1,6 @@
+{
+  "prefix": "!",
+  "token": "discord-token-goes-here",
+  "channelid": "channel-id-to-receive-messages-goes-here",
+  "adminroleid": "admin-role-id-that-has-permissions-to-use-specific-commands"
+}
