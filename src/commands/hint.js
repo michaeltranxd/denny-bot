@@ -19,7 +19,7 @@ module.exports = {
 
     const channelName = message.channel.name;
 
-    let replyMessageContent = `I have notified the HT for help. Please wait.`;
+    let replyMessageContent = `Help is on the way. Please wait.`;
     let leaderMessageContent = `They input \`${args}\` and post can be found [here](${discordMessageLink} 'redirect to post')`;
 
     if (leaderMessageContent.length > 1024) {
@@ -27,7 +27,7 @@ module.exports = {
     }
 
     let leaderEmbedMessage = new MessageEmbed().setColor("#0099ff").addFields({
-      name: `Users from channel \`${channelName}\` are requesting a hint`,
+      name: `Users from channel \`${channelName}\` are requesting a hint \`${textChannelId}\``,
       value: leaderMessageContent,
     });
 
